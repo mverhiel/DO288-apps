@@ -4,12 +4,14 @@ app = express();
 
 // read in the APP_MSG env var
 var msg = process.env.APP_MSG;
+var msg2 = process.env.APP_MSG2;
 
 var response;
 
 app.get('/', function (req, res) {
 
     response = 'Value in the APP_MSG env var is => ' + msg + '\n';
+    response += 'Value in the APP_MSG2 env var is => ' + msg2 + '\n';
 
     // Read in the secret file
     fs.readFile('/opt/app-root/secure/myapp.sec', 'utf8', function (secerr,secdata) {
